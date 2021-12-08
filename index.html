@@ -11,11 +11,11 @@
 
     <style>
         .nav-link {
-            color: rgb(50,50,50) !important;
+            color: rgb(50, 50, 50) !important;
         }
 
         .nav-link:hover {
-            color: rgb(100,100,100) !important;
+            color: rgb(100, 100, 100) !important;
         }
 
         .nav-link:active {
@@ -166,15 +166,30 @@
 
     <div class="container my-5">
         <h2 id="contact-us">Contact Us</h2>
-        <input class="form-control my-2" type="email" id="email" placeholder="Email@Example.com">
-        <textarea class="form-control my-2" name="message" id="message" rows="8" placeholder="Please leave us a message"></textarea>
-        <div class="d-flex justify-content-end mt-5">
-            <button class="btn btn-lg btn-success">Send</button>
-        </div>
+        <form action="https://hooks.zapier.com/hooks/catch/9413593/bmgsqx8" method="post" id="contact-form">
+            <input class="form-control my-2" name="email" type="email" id="email" placeholder="Email@Example.com"
+                required>
+            <textarea class="form-control my-2" name="message" id="message" rows="8"
+                placeholder="Please leave us a message" required></textarea>
+            <div class="d-flex justify-content-end mt-5">
+                <button class="btn btn-lg btn-success" type="submit">Send</button>
+            </div>
+        </form>
     </div>
 
     <div class="container-fuild text-center bg-black text-white">
         Copyright 2021© | 832-275-5999 | online@lenwellscreen.com
+    </div>
+
+    <div id="thanks-for-contact" class="toast" role="alert" aria-live="assertive" aria-atomic="true" style="position: fixed; left: 40px; bottom: 40px;">
+        <div class="toast-header">
+            <strong class="me-auto">Thank you for reaching out</strong>
+            <small>Just now</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            Your message was sent, we will reply to you soon.
+        </div>
     </div>
 
 
@@ -183,6 +198,21 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(() => {
+            const toast = new bootstrap.Toast($("#thanks-for-contact")[0], {});
+
+            $("#contact-form").on("submit", e => {
+                e.preventDefault();
+                $.post('https://hooks.zapier.com/hooks/catch/9413593/bmgsqx8', {
+                    email: $("#email").val(),
+                    message: $("#message").val()
+                }).then(res => {
+                    toast.show();
+                });
+            })
+        })
+    </script>
 </body>
 
 </html>

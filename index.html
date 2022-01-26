@@ -6,22 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lenwell International, Corp</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="./flex-slider.css" rel="stylesheet">
 
     <style>
         .nav-link {
             color: rgb(50, 50, 50) !important;
         }
-
+        
         .nav-link:hover {
             color: rgb(100, 100, 100) !important;
         }
-
+        
         .nav-link:active {
             color: black !important;
         }
-
+        
         .service-card {
             padding: 50px 10px;
             border-radius: 10px;
@@ -32,18 +32,35 @@
             color: white;
             margin-top: 20px;
         }
-
-        @media only screen and (min-width: 756px) {
-            .service-card {
-                font-size: 2rem;
+        
+        .header {
+            position: relative;
+            height: 500px;
+        }
+        
+        .header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(./assets/6.jpg);
+            background-size: cover;
+            background-position: center;
+            filter: grayscale(100%);
+            z-index: -1;
+            clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+        }
+        
+        .sloped {
+            clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 98%);
+        }
+        
+        @media only screen and (max-width: 756px) {
+            .sloped {
+                clip-path: polygon(0 1%, 100% 0, 100% 100%, 0 99%);
             }
-
-            div:nth-child(2)>.service-card {
-                color: beige;
-                transform:
-                    scale(1.3) translateY(40px);
-            }
-
         }
     </style>
 
@@ -51,72 +68,72 @@
 
 <body>
 
-    <div class="container-fluid p-0" style="background-color: #ccebf1; height: 400px;">
+    <div class="container p-0">
+        <div class="p-2 d-flex justify-content-between align-items-center">
+            <img src="./assets/lenwell-logo.svg" alt="Lenwell" style="height: 1.5rem;">
+            <div class="d-flex justify-content-end">
+                <a class="nav-link mx-2 text-nowrap" href="#about-us">About Us</a>
+                <a class="nav-link mx-2 text-nowrap" href="#contact-us">Contact Us</a>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid p-0 header d-flex flex-column justify-content-center">
         <div class="container p-0">
-            <div class="p-2 d-flex justify-content-between">
-                <img src="./assets/lenwell-logo.svg" alt="Lenwell" style="height: 1.5rem;">
-                <div class="d-flex justify-content-end">
-                    <a class="nav-link mx-2" href="#about-us">About Us</a>
-                    <a class="nav-link mx-2" href="#contact-us">Contact Us</a>
-                </div>
-            </div>
-            <h2 class="text-center fw-bold" style="color:#0a0062; margin-top: 100px;">
+            <div class="display-4 m-3" style="color:white; text-shadow: 0 0 10px black;">
                 FULLFILL YOUR CUSTOMER SERVICE NEEDS
-            </h2>
-        </div>
-    </div>
-
-    <div class="container" style="margin-top: -100px;">
-        <div class="row">
-            <div class="col-12 col-md-6 p-3">
-                <img class="rounded shadow" src="./assets/1.jpg" alt="customer service" width="100%" height="100%">
-            </div>
-            <div class="col-12 col-md-6 p-3">
-                <div class="rounded h-100 px-4 py-5 h-100 shadow d-flex flex-column" style="background-color: #f2e9b6;">
-                    <div class="fs-3">Comprehensive Customer Service Solutions:</div>
-                    <div class="d-flex flex-column justify-content-center flex-grow-1">
-                        <ul class="fs-4">
-                            <li>Emails, Phone Calls, SMS</li>
-                            <li>Return, Replacement</li>
-                            <li>Refurbish</li>
-                            <li>Surplus Asset Liquidation (Any item)</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row" style="margin-top: 120px;">
-            <div class="col-12 col-md-4">
-                <div class="service-card" style="background: #FF6B6B;
-                background: -webkit-linear-gradient(top left, #FF6B6B, #931D00);
-                background: -moz-linear-gradient(top left, #FF6B6B, #931D00);
-                background: linear-gradient(to bottom right, #FF6B6B, #931D00);">
-                    Repair Service
-                    <img class="d-block mx-auto" src="./assets/wrench.svg" alt="repair service" style="width: 4rem;">
-                </div>
-            </div>
-            <div class="col-12 col-md-4">
-                <div class="service-card" style="background: #00B8FF;
-                background: -webkit-linear-gradient(top left, #00B8FF, #001B55);
-                background: -moz-linear-gradient(top left, #00B8FF, #001B55);
-                background: linear-gradient(to bottom right, #00B8FF, #001B55);">
-                    <img class="d-block mx-auto" src="./assets/Headphone.svg" alt="repair service" style="width: 4rem;">
-                    Customer Support
-                </div>
-            </div>
-            <div class="col-12 col-md-4">
-                <div class="service-card" style="background: #BF55FF;
-                background: -webkit-linear-gradient(top left, #BF55FF, #7F006E);
-                background: -moz-linear-gradient(top left, #BF55FF, #7F006E);
-                background: linear-gradient(to bottom right, #BF55FF, #7F006E);">
-                    Surplus Liquidation
-                    <img class="d-block mx-auto" src="./assets/dollar.svg" alt="repair service" style="width: 4rem;">
-                </div>
             </div>
         </div>
     </div>
+    <div class="container">
 
-    <div style="
+        <div class="slider-container mt-5">
+            <div class="slide active" style="background-image: url(./assets/3.jpg);">
+            </div>
+            <div class="slide active" style="background-image: url(./assets/4.jpg);">
+            </div>
+            <div class="slide active" style="background-image: url(./assets/5.jpg);">
+            </div>
+            <div class="slide active" style="background-image: url(./assets/6.jpg);">
+            </div>
+            <div class="slide active" style="background-image: url(./assets/7.jpg);">
+            </div>
+        </div>
+
+        <div class="mt-5 ">
+            <p class="lead">Lenwell provides comprehensive service and flexible solutions to meet customers' needs.</p>
+            We help our customers to solve problems at each step of a product's lifecycle. From inventory management to warranty and repair, then to technical support. Whenever our customers present us a problem, we tailor a solution specifically to solve that problem.
+        </div>
+
+        <div class="row m-5">
+            <div class="col-6 col-md-4 d-flex flex-column align-items-center p-5">
+                <img src="./assets/lcd.png" width="100px" alt="lcd repair">
+                <div class="display-6 text-center">LCD Repair</div>
+            </div>
+            <div class="col-6 col-md-4 d-flex flex-column align-items-center p-5">
+                <img src="./assets/circuit-board.png" width="100px" alt="lcd repair">
+                <div class="display-6 text-center">Circuit Board Repair</div>
+            </div>
+            <div class="col-6 col-md-4 d-flex flex-column align-items-center p-5">
+                <img src="./assets/electric-appliance.png" width="100px" alt="lcd repair">
+                <div class="display-6 text-center">Appliance Repair</div>
+            </div>
+            <div class="col-6 col-md-4 d-flex flex-column align-items-center p-5">
+                <img src="./assets/inventory.png" width="100px" alt="lcd repair">
+                <div class="display-6 text-center">Inventory Management</div>
+            </div>
+            <div class="col-6 col-md-4 d-flex flex-column align-items-center p-5">
+                <img src="./assets/technical-support.png" width="100px" alt="lcd repair">
+                <div class="display-6 text-center">Technical Support</div>
+            </div>
+            <div class="col-6 col-md-4 d-flex flex-column align-items-center p-5">
+                <img src="./assets/profit.png" width="100px" alt="lcd repair">
+                <div class="display-6 text-center">Surplus Liquidation</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="sloped" style="
         margin-top: 200px;
         background: url(./assets/2.jpg);
         color: white;
@@ -126,14 +143,11 @@
             
         padding-top: 40px;
         ">
-            <div class="container">
+            <div class="container py-5">
                 <h2 id="about-us">About Us</h2>
                 <p class="lead" style="text-indent: 3rem;">
-                    Lenwell International is a professional repair service provider located in Houston, Texas. With over
-                    35,000 devices repaired, we have the best technicians who specialize in mobile device care. We are
-                    now looking for business partners who needs professional customer service solutions in the United
-                    States. We can improve your customer relationship, raise the satisfaction rate, and free your staff
-                    from support tickets, if you are interested in working with us, please contact us before March,
+                    Lenwell International is a professional repair service provider located in Houston, Texas. With over 35,000 devices repaired, we have the best technicians who specialize in mobile device care. We are now looking for business partners who needs professional
+                    customer service solutions in the United States. We can improve your customer relationship, raise the satisfaction rate, and free your staff from support tickets, if you are interested in working with us, please contact us before March,
                     2022.
                 </p>
                 <h2 class="mt-5 mb-3">Locations</h2>
@@ -141,12 +155,9 @@
                     <div class="col-12 col-md-6 p-3">
                         <h5>Houston Office</h5>
                         <div style="height: 5rem;">
-                            5750 Bintliff Dr #210 <br>
-                            Houston, Texas, 77036 <br>
-                            United States <br>
+                            5750 Bintliff Dr #210 <br> Houston, Texas, 77036 <br> United States <br>
                         </div>
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3465.0231336938427!2d-95.5136523840109!3d29.719089140821595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c252e6855a5f%3A0x24e331569d97cd16!2s5750%20Bintliff%20Dr%2C%20Houston%2C%20TX%2077036!5e0!3m2!1sen!2sus!4v1638918562864!5m2!1sen!2sus"
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3465.0231336938427!2d-95.5136523840109!3d29.719089140821595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c252e6855a5f%3A0x24e331569d97cd16!2s5750%20Bintliff%20Dr%2C%20Houston%2C%20TX%2077036!5e0!3m2!1sen!2sus!4v1638918562864!5m2!1sen!2sus"
                             width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                     <div class="col-12 col-md-6 p-3">
@@ -154,8 +165,7 @@
                         <div style="height: 5rem;">
                             广东省东莞市塘厦 塘龙东路67号富悦华庭 501室
                         </div>
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.9318246991575!2d114.09452151592802!3d22.804989930145386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340387ccb424781d%3A0x828220db5b76e9cb!2z5a-M5oKm5Y2O5bqt5ZWG5Lia5Yqe5YWs5qW8!5e0!3m2!1sen!2sus!4v1638918741808!5m2!1sen!2sus"
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.9318246991575!2d114.09452151592802!3d22.804989930145386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340387ccb424781d%3A0x828220db5b76e9cb!2z5a-M5oKm5Y2O5bqt5ZWG5Lia5Yqe5YWs5qW8!5e0!3m2!1sen!2sus!4v1638918741808!5m2!1sen!2sus"
                             width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
@@ -167,10 +177,8 @@
     <div class="container my-5">
         <h2 id="contact-us">Contact Us</h2>
         <form action="https://hooks.zapier.com/hooks/catch/9413593/bmgsqx8" method="post" id="contact-form">
-            <input class="form-control my-2" name="email" type="email" id="email" placeholder="Email@Example.com"
-                required>
-            <textarea class="form-control my-2" name="message" id="message" rows="8"
-                placeholder="Please leave us a message" required></textarea>
+            <input class="form-control my-2" name="email" type="email" id="email" placeholder="Email@Example.com" required>
+            <textarea class="form-control my-2" name="message" id="message" rows="8" placeholder="Please leave us a message" required></textarea>
             <div class="d-flex justify-content-end mt-5">
                 <button class="btn btn-lg btn-success" type="submit">Send</button>
             </div>
@@ -193,11 +201,9 @@
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="./flex-slider.js"></script>
     <script>
         $(document).ready(() => {
             const toast = new bootstrap.Toast($("#thanks-for-contact")[0], {});

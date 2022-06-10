@@ -1,0 +1,68 @@
+.nav-link {
+    color: rgb(50, 50, 50) !important;
+}
+
+.nav-link:hover {
+    color: rgb(100, 100, 100) !important;
+}
+
+.nav-link:active {
+    color: black !important;
+}
+
+.fs-xs {
+    font-size: 0.5em !important;
+}
+
+.fs-sm {
+    font-size: 0.8em !important;
+}
+
+.fs-lg {
+    font-size: 1.5em !important;
+}
+
+.fs-xl {
+    font-size: 1.8em !important;
+}
+
+.service-card {
+    padding: 50px 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+    margin-top: 20px;
+}
+
+.header {
+    position: relative;
+    height: 500px;
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(./assets/6.jpg);
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%);
+    z-index: -1;
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+}
+
+.sloped {
+    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 98%);
+}
+
+@media only screen and (max-width: 756px) {
+    .sloped {
+        clip-path: polygon(0 1%, 100% 0, 100% 100%, 0 99%);
+    }
+}
